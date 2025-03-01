@@ -9,6 +9,7 @@ public class GeoController : MonoBehaviour
 {
 
     private Rigidbody2D rb;
+    private SpriteRenderer sc;
     public int speed = 5;
     public string nextLevel = "Scene_2";
 
@@ -19,7 +20,11 @@ public class GeoController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        sc = GetComponent<SpriteRenderer>();
+
     }
+
+    //GetComponent<SpriteRenderer>().material.color = new Color(0, 204, 102);
 
 
     // Update is called once per frame
@@ -27,7 +32,19 @@ public class GeoController : MonoBehaviour
     {
 
 
-        float xinput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            Debug.Log("In");
+        {
+            sc.color = new Color(171, 84, 138);
+            Debug.Log(sc.color);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            GetComponent<SpriteRenderer>().material.color = new Color(0, 204, 102);
+        }
+
+            float xinput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(xinput * speed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -45,6 +62,26 @@ public class GeoController : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.D))
+        {
+            rb.velocity = new Vector2(1, -rb.velocity.y);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.position += new Vector3(0, 1, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            rb.velocity = new Vector2(-1, -rb.velocity.y);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position += new Vector3(0, -1, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(1, -rb.velocity.y);
         }
