@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
@@ -31,7 +32,7 @@ public class GeoController : MonoBehaviour
     void Update()
     {
 
-
+         
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             GetComponent<SpriteRenderer>().material.color = new Color(200, 20, 50);
@@ -42,7 +43,12 @@ public class GeoController : MonoBehaviour
             GetComponent<SpriteRenderer>().material.color = new Color(0, 204, 102);
         }
 
-            float xinput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0);
+        }
+
+        float xinput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(xinput * speed, rb.velocity.y);
         // if (Input.GetKeyDown(KeyCode.W))
         //{
@@ -51,7 +57,7 @@ public class GeoController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            rb.velocity = new Vector2(-1, -rb.velocity.y);
+            //rb.velocity = new Vector2(-1, -rb.velocity.y);
         }
 
         //if (Input.GetKeyDown(KeyCode.S))
@@ -61,27 +67,27 @@ public class GeoController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            rb.velocity = new Vector2(1, -rb.velocity.y);
+            //rb.velocity = new Vector2(1, -rb.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.position += new Vector3(0, 1, 0);
-        }
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+//            transform.position += new Vector3(0, 1, 0);
+  //      }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            rb.velocity = new Vector2(-1, -rb.velocity.y);
+            //rb.velocity = new Vector2(-1, -rb.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            transform.position += new Vector3(0, -1, 0);
-        }
+    //    if (Input.GetKeyDown(KeyCode.DownArrow))
+      //  {
+        //    transform.position += new Vector3(0, -1, 0);
+        //}
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            rb.velocity = new Vector2(1, -rb.velocity.y);
+         //   rb.velocity = new Vector2(1, -rb.velocity.y);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 606279917959327620}
   - component: {fileID: 5228546439379392500}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Triangle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.095341206, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.8529843, g: 0.87169814, b: 0.18914193, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,11 +146,11 @@ AreaEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_UseGlobalAngle: 0
   m_ForceAngle: 90
   m_ForceMagnitude: 200
-  m_ForceVariation: 0
+  m_ForceVariation: 20
   m_ForceTarget: 1
   m_Drag: 0
   m_AngularDrag: 0
