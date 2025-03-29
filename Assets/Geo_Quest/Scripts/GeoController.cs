@@ -33,10 +33,8 @@ public class GeoController : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            Debug.Log("In");
         {
-            sc.color = new Color(171, 84, 138);
-            Debug.Log(sc.color);
+            GetComponent<SpriteRenderer>().material.color = new Color(200, 20, 50);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -46,20 +44,20 @@ public class GeoController : MonoBehaviour
 
             float xinput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(xinput * speed, rb.velocity.y);
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            transform.position += new Vector3(0, 1, 0);
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        //{
+            //transform.position += new Vector3(0, 1, 0);
+        //}
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             rb.velocity = new Vector2(-1, -rb.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            transform.position += new Vector3(0, -1, 0);
-        }
+        //if (Input.GetKeyDown(KeyCode.S))
+        ///{
+           // transform.position += new Vector3(0, -1, 0);
+        //}
 
         if (Input.GetKeyDown(KeyCode.D))
         {
