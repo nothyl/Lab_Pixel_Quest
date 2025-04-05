@@ -7,6 +7,7 @@ public class StartScreen : MonoBehaviour
 
 {
     private float timer = 1;
+    private const float resetTime = 1;
 
 
     bool isTimerOn = false;
@@ -26,9 +27,10 @@ public class StartScreen : MonoBehaviour
         {
             Debug.Log("testtrue");
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !isTimerOn)
         {
             isTimerOn = true;
+            timer = resetTime;
             Debug.Log("start");
         }
 
@@ -38,7 +40,7 @@ public class StartScreen : MonoBehaviour
             Debug.Log("counting");
         }
 
-        if (timer == 0)
+        if (timer <= 0 && isTimerOn)
         {
             isTimerOn= false;
             Debug.Log("end");
